@@ -25,5 +25,11 @@ def registration():
         flash('Registration is Successful!')
     return render_template('registration.html', title='Registration Portal', form=form)
 
-
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        return render_template('admin.html', title='Admin Panel')
+    
+    
 
