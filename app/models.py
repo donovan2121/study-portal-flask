@@ -22,3 +22,15 @@ class Student(db.Model):
 
     def __repr__(self):
         return f'<User {self.reddit_username}>'
+
+
+class User(db.Model):
+    __user__ = 'user'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(64), index=True, unique=True)
+    email = db.Column(db.String(120), index=True, unique=True)
+    user_type = db.Column(db.String(64))
+    password_hash = db.Column(db.String(128))
+
+    def __repr__(self):
+        return f'<User {self.username}>'

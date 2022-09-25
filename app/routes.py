@@ -30,6 +30,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         return render_template('admin.html', title='Admin Panel')
+    return render_template('login.html', title='Login Page', form=form)
     
-    
+
 
