@@ -2,4 +2,23 @@
 
 {% block content %}
     <h1>Hi, {{ current_user.username }}</h1>
+    <table>
+        <th>Username</th>
+        <th>Course/Field</th>
+        <th>Response Join</th>
+        <th>Goal</th>
+        <th>Pain-points</th>
+        <th>Expectation</th>
+    {% for student in students %}
+        <tr>
+            <td>{{student.reddit_username}}</td>
+            <td>{{student.course}}</td>
+            <td>{{student.response_join}}</td>
+            <td>{{student.response_goal}}</td>
+            <td>{{student.response_pain}}</td>
+            <td>{{student.response_expect}}</td>
+            <td><input type="checkbox" name="" id=""></td>
+        </tr>
+    {% endfor %}
+    </table>
 {% endblock %}
