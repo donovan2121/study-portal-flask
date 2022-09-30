@@ -11,13 +11,13 @@ def senc_async_email(app, msg):
 
 
 def send_email(subject, sender, recipient, text_body):
-    msg = Message(subject, sender=sender, recipients=recipient)
+    msg = Message(subject, sender=sender, recipients=[recipient])
     msg.body = text_body
     mail.send(msg)
 
 
 def send_student_registration(student):
     send_email('Student Application', 
-                sender = app.config['MAIL_ADMIN'],
-                recipient= app.config['MAIL_USERNAME'],
+                sender = app.config['MAIL_USERNAME'],
+                recipient= app.config['MAIL_ADMIN'],
                 text_body='test')
