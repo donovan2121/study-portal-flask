@@ -3,68 +3,71 @@
 {% block content %}
 <form action="" method="POST">
     {{ form.hidden_tag() }}
-    <div class="container-input">
-        <!-- <label for="">Reddit username:</label>
-        <input type="text" name="username" required> -->
-        {{ form.reddit_username.label}}
-        {{ form.reddit_username }}
-        {% for error in form.reddit_username.errors %}
-        <span style="color: red">[{{ error }}]</span>
-        {% endfor %}
+    <h3>Member Registration</h3>
+    <div class="form-group">   
+        <div class="container-input">
+            <!-- <label for="">Reddit username:</label>
+            <input type="text" name="username" required> -->
+            {{ form.reddit_username.label}}
+            {{ form.reddit_username }}
+            {% for error in form.reddit_username.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div class="container-input">
+            <!-- <label for="">Course/Industry:</label>
+            <input type="text" name="course" required> -->
+            {{ form.course.label}} 
+            {{ form.course }}
+            {% for error in form.course.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+           
+        </div>
+        <div class="container-input">
+            <!-- <label>Why do you want to join?</label>
+            <br>
+            <textarea name="response_join" id="response-join" id="" cols="30" rows="10" required></textarea> -->
+            {{ form.response_join.label}}
+            {{ form.response_join }}
+            {% for error in form.response_join.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+          
+        </div>
+        <div class="container-input">
+            <!-- <label>What are your current Study Goals?</label>
+            <br>
+            <textarea name="response_goal" id="response-goal" id="" cols="30" rows="10" required></textarea> -->
+            {{ form.response_goal.label}} 
+            {{ form.response_goal }}
+            {% for error in form.response_goal.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+          
+        </div>
+        <div class="container-input">
+            <!-- <label>What are your pain-points when Self-Studying/Learning?</label>
+            <br>
+            <textarea name="response_pain" id="response-pain" cols="30" rows="10" required></textarea> -->
+            {{ form.response_pain.label}}
+            {{ form.response_pain }}
+            {% for error in form.response_pain.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+        
+        </div>
+        <div class="container-input">
+            <!-- <label>What do you expect from our Community?</label>
+            <br>
+            <textarea name="response_expect" id="response-expect" cols="30" rows="10" required></textarea> -->
+            {{ form.response_expect.label}} 
+            {{ form.response_expect }}
+            {% for error in form.response_expect.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div class="container-input">{{ form.submit() }}</div>
     </div>
-    <div class="container-input">
-        <!-- <label for="">Course/Industry:</label>
-        <input type="text" name="course" required> -->
-        {{ form.course.label}} 
-        {{ form.course }}
-        {% for error in form.course.errors %}
-        <span style="color: red">[{{ error }}]</span>
-        {% endfor %}
-       
-    </div>
-    <div class="container-input">
-        <!-- <label>Why do you want to join?</label>
-        <br>
-        <textarea name="response_join" id="response-join" id="" cols="30" rows="10" required></textarea> -->
-        {{ form.response_join.label}} <br>
-        {{ form.response_join }}
-        {% for error in form.response_join.errors %}
-        <span style="color: red">[{{ error }}]</span>
-        {% endfor %}
-      
-    </div>
-    <div class="container-input">
-        <!-- <label>What are your current Study Goals?</label>
-        <br>
-        <textarea name="response_goal" id="response-goal" id="" cols="30" rows="10" required></textarea> -->
-        {{ form.response_goal.label}} <br>
-        {{ form.response_goal }}
-        {% for error in form.response_goal.errors %}
-        <span style="color: red">[{{ error }}]</span>
-        {% endfor %}
-      
-    </div>
-    <div class="container-input">
-        <!-- <label>What are your pain-points when Self-Studying/Learning?</label>
-        <br>
-        <textarea name="response_pain" id="response-pain" cols="30" rows="10" required></textarea> -->
-        {{ form.response_pain.label}} <br>
-        {{ form.response_pain }}
-        {% for error in form.response_pain.errors %}
-        <span style="color: red">[{{ error }}]</span>
-        {% endfor %}
-    
-    </div>
-    <div class="container-input">
-        <!-- <label>What do you expect from our Community?</label>
-        <br>
-        <textarea name="response_expect" id="response-expect" cols="30" rows="10" required></textarea> -->
-        {{ form.response_expect.label}} <br>
-        {{ form.response_expect }}
-        {% for error in form.response_expect.errors %}
-        <span style="color: red">[{{ error }}]</span>
-        {% endfor %}
-    </div>
-    <div>{{ form.submit() }}</div>
 </form>
 {% endblock %}

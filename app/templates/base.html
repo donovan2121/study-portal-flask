@@ -4,28 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
     <title>Welcome to Portal</title>
 </head>
 <body>
-    <nav>
-        {% if current_user.is_anonymous %}
-        <a href="{{ url_for('login') }}">Login</a>
-        <a href="{{ url_for('registration') }}">Register</a>
-        {% else %}
-        <a href="{{ url_for('logout') }}">Logout</a>
+    <header>
+        <nav id="main-nav">
+            <ul>
+                {% if current_user.is_anonymous %}
+                <li>
+                    <a href="{{ url_for('registration') }}">Register</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('login') }}">Login</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="#" class="about">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
         {% endif %}
-        <a href="#" class="about">About</a>
-    </nav>
-    <hr>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
-    {% block content %} {% endblock %}
+        {% endwith %}
+        {% block content %} {% endblock %}
+    </main>
+    <footer>
+        
+    </footer>
 </body>
 </html>
