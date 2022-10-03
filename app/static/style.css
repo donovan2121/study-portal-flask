@@ -14,12 +14,13 @@ form {
     align-items: center;
     border: 3px solid green;
     height: 90vh;
-    max-height: 80%;
+    max-height: 100%;
 }
 
 form .form-group {
     border: 3px solid orange;
     padding: 2rem 0;
+    background-color: orange;
 }
 
 form .form-group .container-input {
@@ -28,11 +29,22 @@ form .form-group .container-input {
 
 form .form-group .container-input label {
     display: block;
+    font-size: 16px;
+
 }
 
 form .container-input textarea {
     resize: none;
-    max-width: 90%;
+    max-width: 100%;
+}
+
+form .container-input textarea:focus {
+    width: 100%;
+    height: 100%;
+}
+
+form .container-input .btn {
+    padding: 0.5rem 1rem;
 }
 
 #main-nav {
