@@ -15,6 +15,7 @@ form {
     border: 3px solid green;
     height: 90vh;
     max-height: 100%;
+    
 }
 
 form .form-group {
@@ -23,15 +24,22 @@ form .form-group {
     background-color: orange;
 }
 
+
 form .form-group .container-input {
     padding: 0.1rem 2rem;
+
 }
 
-form .form-group .container-input label {
+form .form-group .container-input #login-input .remember {
+    display: flex;
+}
+
+
+/* form .form-group .container-input label {
     display: block;
     font-size: 16px;
 
-}
+} */
 
 form .container-input textarea {
     resize: none;
