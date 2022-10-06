@@ -16,7 +16,9 @@ def index():
 @app.route('/admin')
 @login_required
 def admin():
-    return render_template('admin.html')
+    students = Student.query.all()
+
+    return render_template('admin.html', students=students)
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
@@ -30,7 +32,7 @@ def registration():
         flash('Registration is Successful!')
 
         # notify admin via smtp
-        send_student_registration(student)
+        # send_student_registration(student)
 
     return render_template('registration.html', title='Registration Portal', form=form)
 
