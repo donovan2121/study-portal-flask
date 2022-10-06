@@ -4,6 +4,8 @@ from flask import render_template, request, flash, redirect, url_for
 from flask_login import current_user, login_required, login_user, logout_user
 from app.models import Student, User
 from werkzeug.urls import url_parse
+from app.email import send_email, send_student_registration
+import os
 
 
 @app.route('/')
@@ -26,6 +28,10 @@ def registration():
         db.session.add(student)
         db.session.commit()
         flash('Registration is Successful!')
+
+        # notify admin via smtp
+        send_student_registration(student)
+
     return render_template('registration.html', title='Registration Portal', form=form)
 
 
@@ -55,3 +61,5 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('login'))
+
+
